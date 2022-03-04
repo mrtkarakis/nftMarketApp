@@ -9,8 +9,6 @@ This project is a starting point for a Flutter application.
 A few resources to get you started if this is your first Flutter project:
 
 ### Connect with me
-- [Linkedin Profile](https://www.linkedin.com/in/mert-karakış-60622320a/)
-
 &nbsp;&nbsp;
 [![website](./img/twitter-light.svg)](https://twitter.com/mrtkarakis#gh-light-mode-only)
 [![website](./img/twitter-dark.svg)](https://twitter.com/mrtkarakis#gh-dark-mode-only)
