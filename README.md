@@ -28,7 +28,7 @@ A few resources to get you started if this is your first Flutter project:
 - [medium](https://mrtkarakis.medium.com)
 
 
-##ScreenShots
+## ScreenShots
 ### OnBoarding
 ![](github/images/onBoarding.png)
 ### Main Page
@@ -39,4 +39,8 @@ A few resources to get you started if this is your first Flutter project:
 ![](github/images/item_detail_page.png)
 ### Buy Now Page
 ![](github/images/buy_now_page.jpg)
+
+## Screen Recoriding
+
+![](github/videos/screen_recording.mp4)
 
