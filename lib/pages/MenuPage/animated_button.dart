@@ -18,7 +18,7 @@ class _AnimatedButtonState extends State<AnimatedButton> {
   bool enable = false;
   @override
   void initState() {
-    Future.delayed(Duration(milliseconds: ((5 - widget.index) * 450).toInt()),
+    Future.delayed(Duration(milliseconds: ((5 - widget.index) * 388).toInt()),
         () {
       setState(() {
         _animated = true;
