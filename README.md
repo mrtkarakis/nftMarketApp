@@ -1,4 +1,4 @@
-# nftappdesign
+# Nft Market App
 
 A new Flutter project.
 
@@ -8,9 +8,30 @@ This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Connect with me
+- [Linkedin Profile](https://www.linkedin.com/in/mert-karakış-60622320a/)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+&nbsp;&nbsp;
+[![website](./img/twitter-light.svg)](https://twitter.com/mrtkarakis#gh-light-mode-only)
+[![website](./img/twitter-dark.svg)](https://twitter.com/mrtkarakis#gh-dark-mode-only)
+&nbsp;&nbsp;
+[![website](./img/linkedin-light.svg)](https://www.linkedin.com/in/mert-karakış-60622320a/#gh-light-mode-only)
+[![website](./img/linkedin-dark.svg)](https://www.linkedin.com/in/mert-karakış-60622320a/#gh-dark-mode-only)
+&nbsp;&nbsp;
+[![website](./img/instagram-light.svg)](https://www.instagram.com/mrtkarakis/#gh-light-mode-only)
+[![website](./img/instagram-dark.svg)](https://www.instagram.com/mrtkarakis/#gh-dark-mode-only)
+&nbsp;&nbsp;
+[![website](./img/medium.svg)](https://mrtkarakis.medium.com)
+
+##ScreenShots
+### OnBoarding
+![](github/images/onBoarding.png)
+### Main Page
+![](github/images/main_page.png)
+### Menu Page
+![](github/images/menu_page.png)
+### Item Detail Page
+![](github/images/item_detail_page.png)
+### Buy Now Page
+![](github/images/buy_now_page.jpg)
+
