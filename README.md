@@ -1,6 +1,7 @@
 # Nft Market App
 
-A new Nft Market Flutter project.
+##### A new Flutter project.
+#### Nft Market App with Animation.
 
 ## Connect with me
 &nbsp;&nbsp;
