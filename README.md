@@ -20,7 +20,7 @@ A new Nft Market Flutter project.
 - [Medium - Flutter Blogs](https://mrtkarakis.medium.com)
 
 ## Screen Recoriding
-![](https://user-images.githubusercontent.com/81350823/156838006-f98204b5-5e0e-4f72-bd27-512557fa3522.mp4)
+![](https://user-images.githubusercontent.com/81350823/156838435-fb448917-3a22-41db-bae2-2f6aafc17cd1.mp4)
 
 ## ScreenShots
 ### OnBoarding
