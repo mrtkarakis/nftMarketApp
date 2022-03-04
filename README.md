@@ -1,6 +1,6 @@
 # Nft Market App
 
-A new Flutter project.
+A new Nft Market Flutter project.
 
 ## Getting Started
 
