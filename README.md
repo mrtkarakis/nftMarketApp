@@ -26,7 +26,7 @@ A few resources to get you started if this is your first Flutter project:
 - [Medium - Flutter Blogs](https://mrtkarakis.medium.com)
 
 ## Screen Recoriding
-![](github/videos/screen_recording.mp4)
+![](https://user-images.githubusercontent.com/81350823/156836713-360de430-29fe-4adc-93b4-dd837a30fdd9.mp4)
 
 ## ScreenShots
 ### OnBoarding
