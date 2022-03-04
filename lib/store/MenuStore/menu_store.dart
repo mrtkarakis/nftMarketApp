@@ -21,4 +21,13 @@ abstract class _MenuStoreBase with Store {
 
   @action
   void changeClosed(bool boolen) => closed = boolen;
+
+  @observable
+  String selectType = "Art";
+
+  @action
+  void changeType(String type) => selectType = type;
+
+  @observable
+  bool animated2 = false;
 }

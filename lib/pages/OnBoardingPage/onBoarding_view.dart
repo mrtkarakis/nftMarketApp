@@ -16,7 +16,10 @@ class OnBoardingPage extends StatelessWidget {
         children: [
           Container(
             height: deviceStore.height / 1.6,
-            color: Colors.red,
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("assets/images/onboarding.png"),
+                    fit: BoxFit.cover)),
           ),
           const Spacer(),
           messageBox(

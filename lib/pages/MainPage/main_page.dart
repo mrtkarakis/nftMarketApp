@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:nftappdesign/core/text_widget.dart';
@@ -15,10 +17,9 @@ class MainPage extends StatelessWidget {
         children: [
           SafeArea(
             bottom: false,
-            child: Container(
-                child: Column(
+            child: Column(
               children: [appBar(), itemList()],
-            )),
+            ),
           ),
           const MenuPage(),
         ],
@@ -40,6 +41,7 @@ class MainPage extends StatelessWidget {
               menuStore.changeClosed(false);
               menuStore.changeMenuClosed(false);
               menuStore.changeMenuOpen(true);
+              menuStore.animated2 = false;
             },
             child: textWidget("Menu",
                 color: colorStore.purpleColor,
@@ -58,8 +60,14 @@ class MainPage extends StatelessWidget {
             height: 55,
             width: 55,
             decoration: BoxDecoration(
-              color: Colors.red,
               borderRadius: BorderRadius.circular(10),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.asset(
+                "assets/images/profile.png",
+                fit: BoxFit.cover,
+              ),
             ),
           )
         ],
@@ -79,53 +87,56 @@ class MainPage extends StatelessWidget {
           //     fit: BoxFit.cover),
         ),
         height: deviceStore.height / 4.7,
+        width: double.infinity,
         child: Hero(
           transitionOnUserGestures: false,
           tag: index,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10),
-            child: Image.asset(
-              "assets/images/image.png",
-              fit: BoxFit.cover,
-            ),
+            child: Observer(builder: (_) {
+              return Image.asset(
+                "assets/images/${menuStore.selectType.toLowerCase()}_$index.png",
+                fit: BoxFit.cover,
+              );
+            }),
           ),
         ),
       );
     }
 
-    Widget subtitle(
-        {required String title,
-        required String value,
-        required String payType}) {
-      return Row(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          textWidget(title,
+    Widget subtitle({required String value, required String payType}) {
+      return Observer(builder: (_) {
+        return Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            textWidget(menuStore.selectType,
+                fontWeight: FontWeight.w700,
+                fontSize: 16,
+                color: colorStore.greyColor),
+            const Spacer(),
+            textWidget(
+              value,
               fontWeight: FontWeight.w700,
-              fontSize: 16,
-              color: colorStore.greyColor),
-          const Spacer(),
-          textWidget(
-            value,
-            fontWeight: FontWeight.w700,
-            fontSize: 22,
-            color: colorStore.greenColor,
-          ),
-          const SizedBox(width: 3),
-          textWidget(payType,
-              fontWeight: FontWeight.w600,
-              fontSize: 14,
+              fontSize: 22,
               color: colorStore.greenColor,
-              padding: const EdgeInsets.only(bottom: 2))
-        ],
-      );
+            ),
+            const SizedBox(width: 3),
+            textWidget(payType,
+                fontWeight: FontWeight.w600,
+                fontSize: 14,
+                color: colorStore.greenColor,
+                padding: const EdgeInsets.only(bottom: 2))
+          ],
+        );
+      });
     }
 
     return Expanded(
       child: ListView.builder(
           shrinkWrap: true,
-          itemCount: 12,
+          itemCount: 10,
           itemBuilder: (BuildContext context, index) {
+            int value = (Random().nextInt(17) + 1);
             return Stack(
               children: [
                 Container(
@@ -145,7 +156,7 @@ class MainPage extends StatelessWidget {
                     children: [
                       image(index: index),
                       const Spacer(flex: 3),
-                      subtitle(title: "Strange", value: "26", payType: "ETH"),
+                      subtitle(value: value.toString(), payType: "ETH"),
                       const Spacer(flex: 1),
                     ],
                   ),
@@ -158,6 +169,7 @@ class MainPage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (_) => ItemDetailPage(
+                                    value: value,
                                     index: index,
                                   )));
                     },

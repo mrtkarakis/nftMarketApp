@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:nftappdesign/core/text_widget.dart';
 import 'package:nftappdesign/globale.dart';
+import 'package:nftappdesign/pages/MainPage/main_page.dart';
 
 class BuyNowPage extends StatefulWidget {
-  const BuyNowPage({Key? key}) : super(key: key);
+  final int index;
+  const BuyNowPage({Key? key, required this.index}) : super(key: key);
 
   @override
   _BuyNowPageState createState() => _BuyNowPageState();
@@ -28,7 +30,7 @@ class _BuyNowPageState extends State<BuyNowPage> {
       body: SafeArea(
           child: Stack(
         children: [
-          image(),
+          Align(alignment: Alignment.center, child: image()),
           button(),
           appBar(),
         ],
@@ -62,11 +64,42 @@ class _BuyNowPageState extends State<BuyNowPage> {
   }
 
   Widget image() {
-    return AnimatedContainer(
-      duration: Duration(milliseconds: duration),
-      alignment: const Alignment(0, -.2),
-      margin: const EdgeInsets.symmetric(horizontal: 20),
-      child: Image.asset("assets/images/image.png"),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      child: Stack(
+        alignment: Alignment(0, -0.2),
+        children: [
+          // ClipRRect(
+          //   borderRadius: BorderRadius.circular(10),
+          //   child: Image.asset(
+          //     "assets/images/${menuStore.selectType.toLowerCase()}_${widget.index}.png",
+          //   ),
+          // ),
+          AnimatedOpacity(
+            curve: Curves.slowMiddle,
+            opacity: !animatedPlay1 ? 0 : 0.97,
+            duration: Duration(milliseconds: (duration * 2.3).toInt()),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.asset(
+                "assets/images/${menuStore.selectType.toLowerCase()}_${widget.index}.png",
+              ),
+            ),
+          ),
+          // AnimatedContainer(
+          //   duration: Duration(milliseconds: (duration).toInt()),
+          //   decoration: BoxDecoration(
+          //       borderRadius: BorderRadius.circular(10),
+          //       image: DecorationImage(
+          //         image: AssetImage(
+          //           "assets/images/${menuStore.selectType.toLowerCase()}_${widget.index}.png",
+          //         ),
+          //         opacity: 0,
+          //       ),
+          //       color: Colors.white.withOpacity(animatedPlay2 ? 0 : 0.88)),
+          // )
+        ],
+      ),
     );
   }
 
@@ -96,7 +129,12 @@ class _BuyNowPageState extends State<BuyNowPage> {
       // ),
       child: showButton
           ? ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (_) => const MainPage()),
+                    (route) => false);
+              },
               child: AnimatedContainer(
                   height: 55,
                   width: deviceStore.width - 100,

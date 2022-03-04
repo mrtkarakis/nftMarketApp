@@ -6,7 +6,9 @@ import 'package:nftappdesign/pages/ItemDetailPage/BuyNowPage/buy_now_view.dart';
 
 class ItemDetailPage extends StatefulWidget {
   int index;
-  ItemDetailPage({Key? key, required this.index}) : super(key: key);
+  int value;
+  ItemDetailPage({Key? key, required this.index, required this.value})
+      : super(key: key);
 
   @override
   State<ItemDetailPage> createState() => _ItemDetailPageState();
@@ -31,13 +33,15 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
           SizedBox(height: deviceStore.height / 100),
           image(),
           SizedBox(height: deviceStore.height / 100),
-          subtitle(type: "Art", value: "18", payType: "ETH"),
-          SizedBox(height: deviceStore.height / 100),
+          subtitle(
+              type: menuStore.selectType,
+              value: widget.value.toString(),
+              payType: "ETH"),
           description(
-              title: "Nature",
+              title: menuStore.selectType,
               message:
                   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."),
-          const Spacer(),
+          const Spacer(flex: 1),
           Row(
             children: [
               const Spacer(flex: 2),
@@ -81,8 +85,14 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
             height: 55,
             width: 55,
             decoration: BoxDecoration(
-              color: Colors.red,
               borderRadius: BorderRadius.circular(10),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.asset(
+                "assets/images/profile.png",
+                fit: BoxFit.cover,
+              ),
             ),
           )
         ],
@@ -110,7 +120,7 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: Image.asset(
-              "assets/images/image.png",
+              "assets/images/${menuStore.selectType.toLowerCase()}_${widget.index}.png",
               fit: BoxFit.cover,
             ),
           ),
@@ -158,9 +168,9 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
       margin: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         textWidget(title, fontSize: 36, fontWeight: FontWeight.w800),
-        const SizedBox(height: 8),
+        const SizedBox(height: 3),
         SizedBox(
-          height: deviceStore.height / 10,
+          height: deviceStore.height / 8,
           child: textWidget(message,
               fontSize: deviceStore.height / 51,
               fontWeight: FontWeight.w400,
@@ -176,7 +186,11 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
       onPressed: () {
         if (isBuy) {
           Navigator.push(
-              context, MaterialPageRoute(builder: (_) => const BuyNowPage()));
+              context,
+              MaterialPageRoute(
+                  builder: (_) => BuyNowPage(
+                        index: widget.index,
+                      )));
         }
       },
       child: textWidget(isBuy ? "Buy now" : "Bid",

@@ -26,7 +26,7 @@ class _MenuPageState extends State<MenuPage> {
         physics: const NeverScrollableScrollPhysics(),
         child: AnimatedContainer(
           onEnd: () {
-            Future.delayed(Duration(milliseconds: 111), () {
+            Future.delayed(const Duration(milliseconds: 111), () {
               setState(() {
                 itemCount = 5;
               });
@@ -54,30 +54,7 @@ class _MenuPageState extends State<MenuPage> {
               color: colorStore.purpleColor,
             ),
             child: SafeArea(
-              child:
-                  //  closed
-                  //     ? Row(
-                  //         mainAxisAlignment: MainAxisAlignment.end,
-                  //         children: [
-                  //           ElevatedButton(
-                  //             onPressed: () {
-                  //               menuStore.menuOpen = false;
-                  //             },
-                  //             child: textWidget(
-                  //               "X",
-                  //               fontSize: 22,
-                  //               fontWeight: FontWeight.w400,
-                  //               color: Colors.white,
-                  //             ),
-                  //             style: ElevatedButton.styleFrom(
-                  //                 shape: const CircleBorder(),
-                  //                 minimumSize: const Size(50, 50),
-                  //                 primary: Colors.black.withOpacity(0.65)),
-                  //           ),
-                  //         ],
-                  //       )
-                  //     :
-                  Padding(
+              child: Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 18.0, vertical: 22),
                 child: Column(
@@ -91,10 +68,9 @@ class _MenuPageState extends State<MenuPage> {
                               });
                               menuStore.changeMenuOpen(false);
                             },
-                            child: textWidget(
-                              "X",
-                              fontSize: 22,
-                              fontWeight: FontWeight.w400,
+                            child: Image.asset(
+                              "assets/icons/closed.png",
+                              width: 24,
                               color: Colors.white,
                             ),
                             style: ElevatedButton.styleFrom(
@@ -102,7 +78,7 @@ class _MenuPageState extends State<MenuPage> {
                                 minimumSize: const Size(50, 50),
                                 primary: Colors.black.withOpacity(0.65)),
                           )
-                        : Padding(padding: EdgeInsets.zero),
+                        : const Padding(padding: EdgeInsets.zero),
                     const Spacer(),
                     !menuStore.closed
                         ? textWidget("Explore",
@@ -121,7 +97,30 @@ class _MenuPageState extends State<MenuPage> {
                             physics: const NeverScrollableScrollPhysics(),
                             itemCount: itemCount,
                             itemBuilder: (BuildContext context, int index) {
-                              return const AnimatedButton();
+                              String type = "Art";
+                              switch (index) {
+                                case 0:
+                                  type = "Art";
+                                  break;
+                                case 1:
+                                  type = "Games";
+                                  break;
+                                case 2:
+                                  type = "Music";
+                                  break;
+                                case 3:
+                                  type = "Nature";
+                                  break;
+                                case 4:
+                                  type = "Animal";
+                                  break;
+                                default:
+                              }
+
+                              return AnimatedButton(
+                                type: type,
+                                index: index,
+                              );
                             })
                         : const Padding(padding: EdgeInsets.zero),
                     const Spacer(flex: 7),

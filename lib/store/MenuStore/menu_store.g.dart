@@ -39,6 +39,36 @@ mixin _$MenuStore on _MenuStoreBase, Store {
     });
   }
 
+  final _$closedAtom = Atom(name: '_MenuStoreBase.closed');
+
+  @override
+  bool get closed {
+    _$closedAtom.reportRead();
+    return super.closed;
+  }
+
+  @override
+  set closed(bool value) {
+    _$closedAtom.reportWrite(value, super.closed, () {
+      super.closed = value;
+    });
+  }
+
+  final _$selectTypeAtom = Atom(name: '_MenuStoreBase.selectType');
+
+  @override
+  String get selectType {
+    _$selectTypeAtom.reportRead();
+    return super.selectType;
+  }
+
+  @override
+  set selectType(String value) {
+    _$selectTypeAtom.reportWrite(value, super.selectType, () {
+      super.selectType = value;
+    });
+  }
+
   final _$_MenuStoreBaseActionController =
       ActionController(name: '_MenuStoreBase');
 
@@ -65,10 +95,34 @@ mixin _$MenuStore on _MenuStoreBase, Store {
   }
 
   @override
+  void changeClosed(bool boolen) {
+    final _$actionInfo = _$_MenuStoreBaseActionController.startAction(
+        name: '_MenuStoreBase.changeClosed');
+    try {
+      return super.changeClosed(boolen);
+    } finally {
+      _$_MenuStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void changeType(String type) {
+    final _$actionInfo = _$_MenuStoreBaseActionController.startAction(
+        name: '_MenuStoreBase.changeType');
+    try {
+      return super.changeType(type);
+    } finally {
+      _$_MenuStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 menuOpen: ${menuOpen},
-menuClosed: ${menuClosed}
+menuClosed: ${menuClosed},
+closed: ${closed},
+selectType: ${selectType}
     ''';
   }
 }
