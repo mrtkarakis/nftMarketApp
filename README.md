@@ -25,8 +25,10 @@ A few resources to get you started if this is your first Flutter project:
 ## 📕 Latest Blog Posts
 
 <!-- BLOG-POST-LIST:START -->
-- [medium](https://mrtkarakis.medium.com)
+- [Medium - Flutter Blogs](https://mrtkarakis.medium.com)
 
+## Screen Recoriding
+![](github/videos/screen_recording.mp4)
 
 ## ScreenShots
 ### OnBoarding
@@ -38,9 +40,7 @@ A few resources to get you started if this is your first Flutter project:
 ### Item Detail Page
 ![](github/images/item_detail_page.png)
 ### Buy Now Page
-![](github/images/buy_now_page.jpg)
+![](github/images/buy_now_page.png)
 
-## Screen Recoriding
 
-![](github/videos/screen_recording.mp4)
 
