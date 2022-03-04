@@ -21,7 +21,6 @@ A new Nft Market Flutter project.
 
 ## Screen Recoriding
 ![Video Link](https://user-images.githubusercontent.com/81350823/156838435-fb448917-3a22-41db-bae2-2f6aafc17cd1.mp4)
-![](https://user-images.githubusercontent.com/81350823/156838435-fb448917-3a22-41db-bae2-2f6aafc17cd1.mp4)
 
 ## ScreenShots
 ### OnBoarding
