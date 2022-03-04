@@ -2,7 +2,7 @@
 
 A new Nft Market Flutter project.
 
-### Connect with me
+## Connect with me
 &nbsp;&nbsp;
 [![website](./img/twitter-light.svg)](https://twitter.com/mrtkarakis#gh-light-mode-only)
 [![website](./img/twitter-dark.svg)](https://twitter.com/mrtkarakis#gh-dark-mode-only)
