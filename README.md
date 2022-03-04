@@ -20,8 +20,13 @@ A few resources to get you started if this is your first Flutter project:
 &nbsp;&nbsp;
 [![website](./img/instagram-light.svg)](https://www.instagram.com/mrtkarakis/#gh-light-mode-only)
 [![website](./img/instagram-dark.svg)](https://www.instagram.com/mrtkarakis/#gh-dark-mode-only)
-&nbsp;&nbsp;
-[![website](./img/medium.svg)](https://mrtkarakis.medium.com)
+
+
+## 📕 Latest Blog Posts
+
+<!-- BLOG-POST-LIST:START -->
+- [medium](https://mrtkarakis.medium.com)
+
 
 ##ScreenShots
 ### OnBoarding
